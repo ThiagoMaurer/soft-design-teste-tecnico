@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35122.118
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoftDesignTesteTecnico", "SoftDesignTesteTecnico.csproj", "{9A640946-5A36-4BD2-A9C7-5332DA05FB88}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoftDesignTesteTecnico.Tests", "..\SoftDesignTesteTecnico.Tests\SoftDesignTesteTecnico.Tests.csproj", "{D06AA183-181F-44C8-BE01-FC9F55268BCA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9A640946-5A36-4BD2-A9C7-5332DA05FB88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A640946-5A36-4BD2-A9C7-5332DA05FB88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A640946-5A36-4BD2-A9C7-5332DA05FB88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A640946-5A36-4BD2-A9C7-5332DA05FB88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D06AA183-181F-44C8-BE01-FC9F55268BCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D06AA183-181F-44C8-BE01-FC9F55268BCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D06AA183-181F-44C8-BE01-FC9F55268BCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D06AA183-181F-44C8-BE01-FC9F55268BCA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9B84EAD6-06DB-4ADA-B05C-54D5FE063CFB}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,35 @@
+﻿@model SoftDesignTesteTecnico.Models.ViewModels.LoginViewModel
+
+@{
+    ViewData["Title"] = "Login";
+    Layout = "_LayoutUnauthorized";
+}
+
+<link rel="stylesheet" href="~/css/account/login.css" asp-append-version="true" />
+
+<div class="login-container">
+    <h2>Login</h2>
+    <form asp-action="Login" method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="Email" class="control-label">Email</label>
+            <input asp-for="Email" class="form-control" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Password" class="control-label">Password</label>
+            <input asp-for="Password" class="form-control" type="password" />
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <div class="form-check">
+                <input asp-for="RememberMe" class="form-check-input" />
+                <label asp-for="RememberMe" class="form-check-label"></label>
+            </div>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Login</button>
+        </div>
+        <a id="createAccount" asp-controller="Account" asp-action="Register">Register as a new user</a>
+    </form>
+</div>

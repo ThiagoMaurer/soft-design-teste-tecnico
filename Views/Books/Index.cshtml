@@ -1,0 +1,62 @@
+﻿@model IEnumerable<SoftDesignTesteTecnico.Models.Book>
+
+@{
+    ViewData["Title"] = "Home Page";
+    Layout = "_LayoutAuthorized";
+}
+
+<link rel="stylesheet" href="~/css/books/index.css" asp-append-version="true" />
+
+<h2>Books</h2>
+
+<div class="container">
+    <!-- Search Form -->
+    <form method="get" action="@Url.Action("Index", "Books")">
+        <div class="form-group row">
+            <div class="col-md-8">
+                <input type="text" name="searchString" class="form-control" placeholder="Search for a book title..." value="@ViewData["CurrentFilter"]" />
+            </div>
+            <div class="col-md-2">
+                <button type="submit" class="btn btn-primary">Search</button>
+            </div>
+            <div class="col-md-2">
+                <a href="@Url.Action("Index", "Books")" class="btn btn-secondary">Reset</a>
+            </div>
+        </div>
+    </form>
+
+    <div class="row">
+        @foreach (var book in Model)
+        {
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">@book.Title</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">@book.Author</h6>
+                        <p class="card-text">
+                            @if (book.IsRented)
+                            {
+                                <span class="text-danger">Currently rented</span>
+                            }
+                            else
+                            {
+                                <span class="text-success">Available for rent</span>
+                            }
+                        </p>
+                        <a href="@Url.Action("Details", "Books", new { id = book.Id })" class="btn btn-primary">Details</a>
+                        @if (!book.IsRented)
+                        {
+                            <a href="@Url.Action("Rent", "Books", new { id = book.Id })" class="btn btn-success">Rent</a>
+                        }
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        // Optional: Add any custom scripts you need for this page
+    </script>
+}

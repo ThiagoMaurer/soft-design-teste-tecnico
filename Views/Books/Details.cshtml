@@ -1,0 +1,41 @@
+﻿@model SoftDesignTesteTecnico.Models.Book
+
+@{
+    ViewData["Title"] = "Book Details";
+    Layout = "_LayoutAuthorized";
+}
+
+<link rel="stylesheet" href="~/css/books/index.css" asp-append-version="true" />
+
+<h2>Book Details</h2>
+
+<div class="card mb-4 shadow-sm">
+    <div class="card-body">
+        <h3 class="card-title">@Model.Title</h3>
+        <h5 class="card-subtitle mb-2 text-muted">Author: @Model.Author</h5>
+        <p class="card-text">
+            @if (Model.IsRented)
+            {
+                <span class="text-danger">This book is currently rented.</span>
+            }
+            else
+            {
+                <span class="text-success">This book is available for rent.</span>
+            }
+        </p>
+
+        <div>
+            <a href="@Url.Action("Index", "Books")" class="btn btn-secondary">Back to list</a>
+            @if (!Model.IsRented)
+            {
+                <a href="@Url.Action("Rent", "Books", new { id = Model.Id })" class="btn btn-success">Rent this book</a>
+            }
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        // Optional: Add any custom scripts you need for this page
+    </script>
+}
